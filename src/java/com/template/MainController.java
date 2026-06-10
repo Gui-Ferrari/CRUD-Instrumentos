@@ -46,7 +46,7 @@ public class MainController {
         objdto.setFamilia(familia);
         objdto.setMarca(marca);
         objdto.setPreco(preco);
-
+// foda
         InstrumentoDAO objdao = new InstrumentoDAO();
         objdao.inserirInstrumento(objdto);
 
