@@ -36,13 +36,13 @@
                 <Label text="ID" textFill="WHITE" />
                 <Label text="Nome" textFill="WHITE" GridPane.rowIndex="1" />
                 <Label text="Preço" textFill="WHITE" GridPane.rowIndex="3" />
-                <TextField fx:id="txtId" prefHeight="26.0" prefWidth="247.0" GridPane.columnIndex="1" />
-                <TextField fx:id="txtNome" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                <TextField fx:id="txtPreco" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <TextField fx:id="txtId" prefHeight="26.0" prefWidth="247.0" promptText="ID Gerado" GridPane.columnIndex="1" />
+                <TextField fx:id="txtNome" promptText="Nome do instrumento" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <TextField fx:id="txtPreco" promptText="R$ 0.00" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                 <Label text="Marca" textFill="WHITE" GridPane.rowIndex="4" />
                 <Label text="Familia" textFill="WHITE" GridPane.rowIndex="2" />
-                <TextField fx:id="txtMarca" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                <TextField fx:id="txtFamilia" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <TextField fx:id="txtMarca" promptText="Fabricante" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                <TextField fx:id="txtFamilia" promptText="Ex: Cordas, Sopro..." GridPane.columnIndex="1" GridPane.rowIndex="2" />
             </children>
         </GridPane>
         <GridPane layoutX="14.0" layoutY="320.0" prefHeight="34.0" prefWidth="315.0">
@@ -56,10 +56,10 @@
                 <RowConstraints maxHeight="31.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
             </rowConstraints>
             <children>
-                <Button fx:id="btnCadastrar" mnemonicParsing="false" onAction="#btnCadastrarAction" prefHeight="26.0" prefWidth="72.0" text="Cadastrar" />
-                <Button fx:id="btnEditar" mnemonicParsing="false" onAction="#btnEditarAction" prefHeight="26.0" prefWidth="72.0" text="Editar" GridPane.columnIndex="1" />
-                <Button fx:id="btnExcluir" mnemonicParsing="false" onAction="#btnExcluirAction" prefHeight="26.0" prefWidth="72.0" text="Excluir" GridPane.columnIndex="2" />
-                <Button fx:id="btnLimpar" mnemonicParsing="false" onAction="#btnLimparAction" prefHeight="26.0" prefWidth="72.0" text="Limpar" GridPane.columnIndex="3" />
+                <Button fx:id="btnCadastrar" mnemonicParsing="false" onAction="#btnCadastrarAction" prefHeight="26.0" prefWidth="72.0" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold;" text="Cadastrar" />
+                <Button fx:id="btnEditar" mnemonicParsing="false" onAction="#btnEditarAction" prefHeight="26.0" prefWidth="72.0" style="-fx-background-color: #2980b9; -fx-text-fill: white; -fx-font-weight: bold;" text="Editar" GridPane.columnIndex="1" />
+                <Button fx:id="btnExcluir" mnemonicParsing="false" onAction="#btnExcluirAction" prefHeight="26.0" prefWidth="72.0" style="-fx-background-color: #c0392b; -fx-text-fill: white; -fx-font-weight: bold;" text="Excluir" GridPane.columnIndex="2" />
+                <Button fx:id="btnLimpar" mnemonicParsing="false" onAction="#btnLimparAction" prefHeight="26.0" prefWidth="72.0" style="-fx-background-color: gray; -fx-text-fill: white; -fx-font-weight: bold;" text="Limpar" GridPane.columnIndex="3" />
             </children>
         </GridPane>
         <TableView fx:id="tblInstrumento" layoutX="342.0" layoutY="156.0" onMouseClicked="#carregarCampos" prefHeight="198.0" prefWidth="378.0">
@@ -76,5 +76,6 @@
                 <Font name="Bodoni 72 Bold" size="42.0" />
             </font>
         </Label>
+      <Label fx:id="lblMensagem" layoutX="134.0" layoutY="364.0" textFill="WHITE" />
     </children>
 </AnchorPane>
