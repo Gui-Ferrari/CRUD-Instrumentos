@@ -1,4 +1,4 @@
-package com.template;
+package com.template.main;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -11,7 +11,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-        Parent root = FXMLLoader.load(getClass().getResource("main.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../main.fxml"));
 
         primaryStage.setTitle("Gerenciador de Instrumentos Musicais");
         primaryStage.setScene(new Scene(root));
