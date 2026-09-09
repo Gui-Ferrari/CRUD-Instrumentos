@@ -1,20 +1,27 @@
 package com.template.validator;
 
 import com.template.model.dto.InstrumentoDTO;
+import java.util.ArrayList;
+import java.util.List;
 
-public class InstrumentoValidator {
+public class InstrumentoValidator implements IInstrumentoValidator {
 
-    public static void validar(InstrumentoDTO dto) {
+    @Override
+    public void validar(InstrumentoDTO dto) {
         if (dto == null) {
             throw new IllegalArgumentException("Objeto de instrumento não informado.");
         }
 
-        if (dto.getNome() == null || dto.getNome().trim().isEmpty()) {
-            throw new IllegalArgumentException("O campo Nome é obrigatório!");
-        }
+        List<Validador<?>> validadores = new ArrayList<>();
+        validadores.add(new CampoObrigatorioValidador("Nome", dto.getNome()));
+        validadores.add(new CampoObrigatorioValidador("Família", dto.getFamilia()));
+        validadores.add(new CampoObrigatorioValidador("Marca", dto.getMarca()));
+        validadores.add(new PrecoValidator(dto.getPreco()));
 
-        if (dto.getPreco() <= 0) {
-            throw new IllegalArgumentException("Informe um Preço válido maior que zero!");
+        for (Validador validador : validadores) {
+            if (!validador.validar(validador.getValor())) {
+                throw new IllegalArgumentException(validador.getMensagemErro());
+            }
         }
     }
 }

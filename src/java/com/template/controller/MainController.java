@@ -1,7 +1,7 @@
 package com.template.controller;
 
 import com.template.model.dto.InstrumentoDTO;
-import com.template.service.InstrumentoService;
+import com.template.service.IInstrumentoService;
 import com.template.util.AlertaUtil;
 
 import javafx.collections.FXCollections;
@@ -22,8 +22,13 @@ public class MainController {
     @FXML private TextField txtId, txtNome, txtFamilia, txtMarca, txtPreco;
     @FXML private Label lblMensagem;
 
-    // Apenas a camada de Serviço é injetada
-    private final InstrumentoService instrumentoService = new InstrumentoService();
+    // Injeção da Interface do Serviço (Princípio da Inversão de Dependência - DIP)
+    private final IInstrumentoService instrumentoService;
+
+    // Construtor utilizado para Injeção de Dependência via ControllerFactory do FXMLLoader
+    public MainController(IInstrumentoService instrumentoService) {
+        this.instrumentoService = instrumentoService;
+    }
 
     @FXML
     public void initialize() {

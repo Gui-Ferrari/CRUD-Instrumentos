@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class InstrumentoDAO {
+public class InstrumentoDAO implements IInstrumentoDAO {
 
     private static final Logger logger = Logger.getLogger(InstrumentoDAO.class.getName());
 
